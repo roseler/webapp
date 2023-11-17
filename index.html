@@ -32,7 +32,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
   import { getDatabase,set, ref, update } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-  import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+  import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -54,95 +54,69 @@
   const database = getDatabase(app);
   const auth = getAuth();
 
-  
-  const signup = document.getElementById("signup");
-  const createacctbtn = document.getElementById("createacctbtn");
-  const logout = document.getElementById("logout");
 
-  submit.addEventListener('click',(e)=>
-  {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+submit.addEventListener('click',(e)=>
+{
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
 
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    
+    const dt = new Date();
+    update(ref(database, 'user/' + user.uid),{
+      last_login: dt,
       
-      const dt = new Date();
-      update(ref(database, 'users/' + user.uid),{
-        last_login: dt,
-        
-      });
-      
-      alert('Logged In');
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      alert(errorMessage);
-      // ..
     });
+    
+    alert('Logged In');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert(errorMessage);
+    // ..
   });
+});
+signup.addEventListener('click',(e)=>
+{
+  document.getElementById("main").style.display = "none";
+  document.getElementById("create-acct").style.display = "block";
+});
+createacctbtn.addEventListener('click',(e)=>
+{
 
-  signup.addEventListener('click',(e)=>
-  {
-    document.getElementById("main").style.display = "none";
-    document.getElementById("create-acct").style.display = "block";
-  });
+  var emailsignup = document.getElementById("emailsignup").value;
+  var passwordsignup = document.getElementById("passwordsignup").value;
 
-  createacctbtn.addEventListener('click',(e)=>
-  {
 
-    var emailsignup = document.getElementById("emailsignup").value;
-    var passwordsignup = document.getElementById("passwordsignup").value;
+  createUserWithEmailAndPassword(auth, emailsignup, passwordsignup)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
 
-    createUserWithEmailAndPassword(auth, emailsignup, passwordsignup)
-    .then((userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
+    set(ref(database, 'users/' + user.uid), {
+      email: emailsignup,
+      password: passwordsignup,
 
-      set(ref(database, 'users/' + user.uid), {
-        email: emailsignup,
-        password: passwordsignup,
-      });
-      alert('Signed up');
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
 
-      alert(errorMessage);
-      // ..
     });
-  });
+    alert('Signed up');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-
-      window.location.href = "home.php";
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
+    alert(errorMessage);
+    // ..
   });
-
-  logout.addEventListener('click',(e)=>
-  {
-    auth.signOut().then(() => {
-      // Sign-out successful.
-      alert('Logged Out');
-    }).catch((error) => {
-      // An error happened.
-      alert(error);
-    });
-  });
+});
 </script>
 
 
