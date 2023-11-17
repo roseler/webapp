@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <div id="main">
+    </div>
+    <h1>Sign In</h1>
+    <input id="email" type="text" placeholder="Email"></input>
+    <input id="password" type="password" placeholder="Password"></input>
+    <button id="submit">Submit</button>
+    <p><span>or</span></p>
+    <button id="signup">Sign Up</button>
+    <div id="create-acct">
+      <h1>Create an Account</h1>
+      <input id="emailsignup" type="text" placeholder="Email *"></input>
+      <input id="confirmemailsignup" type="email" placeholder="Confirm Email *"></input>
+      <input id="passwordsignup" type="password" placeholder="Password *"></input>
+      <input id="confirmpasswordsignup" type="password" placeholder="Confirm Password *"></input>
+      <button id="createacctbtn">Create Account</button>
+      <button id="return-btn">Return to Login</button>
+    </div>
+  </div>
+</body>
+<script type="module" src="assets/js/main.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getDatabase,set, ref, update } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+  import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA-sybLjfW5dt26UBNsZSCmevSVNgYtJ3Q",
+    authDomain: "webapp-8c2d0.firebaseapp.com",
+    databaseURL: "https://webapp-8c2d0-default-rtdb.firebaseio.com",
+    projectId: "webapp-8c2d0",
+    storageBucket: "webapp-8c2d0.appspot.com",
+    messagingSenderId: "459872328416",
+    appId: "1:459872328416:web:ae6364040a2e2899a48e85",
+    measurementId: "G-M31HYRY9PG"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  
+  const signup = document.getElementById("signup");
+  const createacctbtn = document.getElementById("createacctbtn");
+  const logout = document.getElementById("logout");
+
+  submit.addEventListener('click',(e)=>
+  {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      
+      const dt = new Date();
+      update(ref(database, 'users/' + user.uid),{
+        last_login: dt,
+        
+      });
+      
+      alert('Logged In');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+      // ..
+    });
+  });
+
+  signup.addEventListener('click',(e)=>
+  {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("create-acct").style.display = "block";
+  });
+
+  createacctbtn.addEventListener('click',(e)=>
+  {
+
+    var emailsignup = document.getElementById("emailsignup").value;
+    var passwordsignup = document.getElementById("passwordsignup").value;
+
+    createUserWithEmailAndPassword(auth, emailsignup, passwordsignup)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+
+      set(ref(database, 'users/' + user.uid), {
+        email: emailsignup,
+        password: passwordsignup,
+      });
+      alert('Signed up');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+      // ..
+    });
+  });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+
+      window.location.href = "home.php";
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+
+  logout.addEventListener('click',(e)=>
+  {
+    auth.signOut().then(() => {
+      // Sign-out successful.
+      alert('Logged Out');
+    }).catch((error) => {
+      // An error happened.
+      alert(error);
+    });
+  });
+</script>
+
+
+</html>
