@@ -9,13 +9,14 @@
 <body>
   <div class="login-container">
     <div id="main">
-    </div>
-    <h1>Sign In</h1>
+     <h1>Sign In</h1>
     <input id="email" type="text" placeholder="Email"></input>
     <input id="password" type="password" placeholder="Password"></input>
     <button id="submit">Submit</button>
     <p><span>or</span></p>
     <button id="signup">Sign Up</button>
+  </div>
+   
     <div id="create-acct">
       <h1>Create an Account</h1>
       <input id="emailsignup" type="text" placeholder="Email *"></input>
@@ -23,7 +24,7 @@
       <input id="passwordsignup" type="password" placeholder="Password *"></input>
       <input id="confirmpasswordsignup" type="password" placeholder="Confirm Password *"></input>
       <button id="createacctbtn">Create Account</button>
-      <button id="return-btn">Return to Login</button>
+      <button id="returnbtn">Return to Login</button>
     </div>
   </div>
 </body>
@@ -140,11 +141,14 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
+window.onload = function(){
+const returnbtn = document.getElementById('returnbtn');
 returnbtn.addEventListener('click',(e)=>
 {
   document.getElementById("main").style.display = "block";
   document.getElementById("create-acct").style.display = "none";
 });
+}
 
 </script>
 
