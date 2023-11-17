@@ -141,15 +141,20 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
-window.onload = function(){
-const returnbtn = document.getElementById('returnbtn');
-returnbtn.addEventListener('click',(e)=>
-{
-  document.getElementById("main").style.display = "block";
-  document.getElementById("create-acct").style.display = "none";
-});
-}
+window.onload = function() {
+  const signupButton = document.getElementById('signup');
+  const returnButton = document.getElementById('returnbtn');
+  
+  signupButton.addEventListener('click', function() {
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('create-acct').style.display = 'block';
+  });
 
+  returnButton.addEventListener('click', function() {
+    document.getElementById('main').style.display = 'block';
+    document.getElementById('create-acct').style.display = 'none';
+  });
+}
 </script>
 
 
