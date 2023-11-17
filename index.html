@@ -120,20 +120,25 @@ createacctbtn.addEventListener('click',(e)=>
   var emailsignup = document.getElementById("emailsignup").value;
   var passwordsignup = document.getElementById("passwordsignup").value;
 
-
+ // Check if the email has the correct domain
+ const allowedDomain = 'yourdomain.com'; // Replace with your desired domain
+  if (!emailsignup.endsWith('@' + allowedDomain)) {
+    alert('Invalid email domain. Please use an email with the domain ' + allowedDomain);
+    return;
+  }
   createUserWithEmailAndPassword(auth, emailsignup, passwordsignup)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
 
-    // email verification
-    user.sendEmailVerification().then(function() {
-      // Email sent.
-      alert('Email Verification Sent');
-    }).catch(function(error) {
-      // An error happened.
-      alert(error);
-    });
+    // Send email verification
+    user.sendEmailVerification()
+        .then(() => {
+          console.log('Verification email sent.');
+        })
+        .catch((error) => {
+          console.error('Error sending verification email:', error);
+        });
 
     // add user to database
 
