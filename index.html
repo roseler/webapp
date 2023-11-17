@@ -126,6 +126,17 @@ createacctbtn.addEventListener('click',(e)=>
     // Signed up 
     const user = userCredential.user;
 
+    // email verification
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+      alert('Email Verification Sent');
+    }).catch(function(error) {
+      // An error happened.
+      alert(error);
+    });
+
+    // add user to database
+
     set(ref(database, 'users/' + user.uid), {
       email: emailsignup,
       password: passwordsignup
@@ -144,6 +155,15 @@ createacctbtn.addEventListener('click',(e)=>
 });
 
 const user = auth.currentUser;
+if (user){
+  // User is signed in
+  // ...
+  window.location.href = "home.php";
+} else {
+  // No user is signed in
+  // ...
+}
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
