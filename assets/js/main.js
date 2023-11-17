@@ -120,9 +120,3 @@ returnBtn.addEventListener("click", function() {
     createacct.style.display = "none";
 });
 
-// Function to clear input fields
-function clearInputFields() {
-  document.getElementById("emailsignup").value = "";
-  document.getElementById("passwordsignup").value = "";
-  document.getElementById("confirmpasswordsignup").value = "";
-};

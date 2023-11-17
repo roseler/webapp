@@ -113,9 +113,15 @@ submit.addEventListener('click',(e)=>
     // ..
   });
 });
-
+// Function to clear input fields
+function clearInputFields() {
+  document.getElementById("emailsignup").value = "";
+  document.getElementById("passwordsignup").value = "";
+  document.getElementById("confirmpasswordsignup").value = "";
+}
 createacctbtn.addEventListener('click',(e)=>
 {
+  e.preventDefault();
 
   var emailsignup = document.getElementById("emailsignup").value;
   var passwordsignup = document.getElementById("passwordsignup").value;
