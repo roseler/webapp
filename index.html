@@ -142,13 +142,7 @@ logout.addEventListener('click',(e)=>
   });
 });
 window.onload = function() {
-  const signupButton = document.getElementById('signup');
   const returnButton = document.getElementById('returnbtn');
-  
-  signupButton.addEventListener('click', function() {
-    document.getElementById('main').style.display = 'none';
-    document.getElementById('create-acct').style.display = 'block';
-  });
 
   returnButton.addEventListener('click', function() {
     document.getElementById('main').style.display = 'block';
