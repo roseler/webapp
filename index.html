@@ -121,7 +121,7 @@ createacctbtn.addEventListener('click',(e)=>
   var passwordsignup = document.getElementById("passwordsignup").value;
 
  // Check if the email has the correct domain
- const allowedDomain = 'yourdomain.com'; // Replace with your desired domain
+ const allowedDomain = 'g.batstate-u.edu.ph'; // Replace with your desired domain
   if (!emailsignup.endsWith('@' + allowedDomain)) {
     alert('Invalid email domain. Please use an email with the domain ' + allowedDomain);
     return;
@@ -131,7 +131,6 @@ createacctbtn.addEventListener('click',(e)=>
     // Signed up 
     const user = userCredential.user;
 
-    // Send email verification
     // Send email verification
     sendEmailVerification(auth.currentUser)
       .then(() => {
