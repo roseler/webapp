@@ -2,7 +2,22 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
   import { getDatabase,set, ref} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
   import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
-const firebaseConfig = {
+
+//Log In UI
+const signUpButton = document.getElementById('signUpAni');
+const signInButton = document.getElementById('signInAni');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+
+  const firebaseConfig = {
     apiKey: "AIzaSyA-sybLjfW5dt26UBNsZSCmevSVNgYtJ3Q",
     authDomain: "webapp-8c2d0.firebaseapp.com",
     databaseURL: "https://webapp-8c2d0-default-rtdb.firebaseio.com",
@@ -18,7 +33,7 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 const submitButton = document.getElementById("submit");
-const signupButton = document.getElementById("signup");
+const signupButton = document.getElementById("signUpAni");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");

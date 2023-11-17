@@ -4,30 +4,63 @@
 <head>
   <title>Login</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+  <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
-  <div class="login-container">
-    <div id="main">
-     <h1>Sign In</h1>
-    <input id="email" type="text" placeholder="Email"></input>
-    <input id="password" type="password" placeholder="Password"></input>
-    <button id="submit">Submit</button>
-    <p><span>or</span></p>
-    <button id="signup">Sign Up</button>
-  </div>
+  
+  <h2><span id="cs">CS</span> Tavern</h2>
+
+  <div class="container" id="container">
+        <div class="overlay-container" id="main">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button class="ghost" id="signInAni">Sign In</button>
+            </div>
+
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Spartan!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost" id="signUpAni">Sign Up</button>
+            </div>
+          </div>  
+        </div> 
+    
+
+      <div class="form-container sign-up-container" id="create-acct">
+          <form action="#">
+              <h1>Create an Account</h1>
+              <input id="emailsignup" type="text" placeholder="Email *"></input>
+              <input id="confirmemailsignup" type="email" placeholder="Confirm Email *"></input>
+              <input id="passwordsignup" type="password" placeholder="Password *"></input>
+              <input id="confirmpasswordsignup" type="password" placeholder="Confirm Password *"></input>
+              <button id="createacctbtn">Create Account</button>
+          </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Sign in</h1>
+            <input id="email" type="text" placeholder="Email"></input>
+            <input id="password" type="password" placeholder="Password"></input>
+            <button id="submit">Sign In</button>
+            
+            
+          </form>
+      </div>          
    
-    <div id="create-acct">
-      <h1>Create an Account</h1>
-      <input id="emailsignup" type="text" placeholder="Email *"></input>
-      <input id="confirmemailsignup" type="email" placeholder="Confirm Email *"></input>
-      <input id="passwordsignup" type="password" placeholder="Password *"></input>
-      <input id="confirmpasswordsignup" type="password" placeholder="Confirm Password *"></input>
-      <button id="createacctbtn">Create Account</button>
-      <button id="returnbtn">Return to Login</button>
-    </div>
   </div>
+
 </body>
+
+
+
+
 <script type="module" src="assets/js/main.js"></script>
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -131,6 +164,7 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
+
 logout.addEventListener('click',(e)=>
 {
   auth.signOut().then(() => {
@@ -141,14 +175,7 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
-window.onload = function() {
-  const returnButton = document.getElementById('returnbtn');
 
-  returnButton.addEventListener('click', function() {
-    document.getElementById('main').style.display = 'block';
-    document.getElementById('create-acct').style.display = 'none';
-  });
-}
 </script>
 
 
