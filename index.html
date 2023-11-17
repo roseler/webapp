@@ -119,7 +119,19 @@ createacctbtn.addEventListener('click',(e)=>
 
   var emailsignup = document.getElementById("emailsignup").value;
   var passwordsignup = document.getElementById("passwordsignup").value;
+  var confirmpasswordsignup = document.getElementById("confirmpasswordsignup").value;
+  var confirmemailsignup = document.getElementById("confirmemailsignup").value;
+  // Check if the password and confirmation password match
+  if (passwordsignup !== confirmpasswordsignup) {
+    alert('Password and confirmation password do not match.');
+    return;
+  }
 
+  // Check if the email and confirmation email match
+  if (emailsignup !== confirmemailsignup) {
+    alert('Email and confirmation email do not match.');
+    return;
+  }
  // Check if the email has the correct domain
  const allowedDomain = 'g.batstate-u.edu.ph'; // Replace with your desired domain
   if (!emailsignup.endsWith('@' + allowedDomain)) {
