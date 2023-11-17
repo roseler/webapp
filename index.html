@@ -57,15 +57,12 @@
 
 </body>
 
-
-
-
 <script type="module" src="assets/js/main.js"></script>
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
   import { getDatabase,set, ref, update } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-  import { getAuth,signInWithEmailAndPassword, createUserWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -116,11 +113,7 @@ submit.addEventListener('click',(e)=>
     // ..
   });
 });
-signup.addEventListener('click',(e)=>
-{
-  document.getElementById("main").style.display = "none";
-  document.getElementById("create-acct").style.display = "block";
-});
+
 createacctbtn.addEventListener('click',(e)=>
 {
 
@@ -135,8 +128,7 @@ createacctbtn.addEventListener('click',(e)=>
 
     set(ref(database, 'users/' + user.uid), {
       email: emailsignup,
-      password: passwordsignup,
-
+      password: passwordsignup
 
     });
     alert('Signed up');
