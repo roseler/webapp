@@ -14,31 +14,30 @@
   <h2><span id="cs">CS</span> Tavern</h2>
 
   <div class="container" id="container">
-        <div class="overlay-container" id="main">
+      <div class="overlay-container" id="main">
           <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
-              <button class="ghost" id="signInAni">Sign In</button>
-            </div>
+              <div class="overlay-panel overlay-left">
+                  <h1>Welcome Back!</h1>
+                  <p>To keep connected with us please login with your personal info</p>
+                  <button class="ghost" id="signInAni" onclick="javascript: $zoho.salesiq.reset();">Sign In</button>
+              </div>
 
-            <div class="overlay-panel overlay-right">
-              <h1>Hello, Spartan!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button class="ghost" id="signUpAni">Sign Up</button>
-            </div>
-          </div>  
-        </div> 
-    
+              <div class="overlay-panel overlay-right">
+                  <h1>Hello, Spartan!</h1>
+                  <p>Enter your personal details and start the journey with us</p>
+                  <button class="ghost" id="signUpAni">Sign Up</button>
+              </div>
+          </div>
+      </div>
 
-        <div class="form-container sign-up-container" id="create-acct">
+      <div class="form-container sign-up-container" id="create-acct">
           <form action="#">
               <h1>Create an Account</h1>
               <input id="emailsignup" type="text" placeholder="Email *"></input>
               <input id="confirmemailsignup" type="email" placeholder="Re-enter Email *"></input>
               <div class="input-container">
-                  <input id="passwordsignup" type="password" placeholder="Password *"></input>
-                  <span class="eyeicon" onclick="togglePasswordVisibility('passwordsignup')">&#x1F441;</span>
+                <input id="passwordsignup" type="password" placeholder="Password *"></input>
+                <span class="eyeicon" data-target-input="passwordsignup">&#x1F441;</span>
               </div>
               <div class="input-container">
                   <input id="confirmpasswordsignup" type="password" placeholder="Re-enter Password *"></input>
@@ -47,19 +46,19 @@
               <button id="createacctbtn">Create Account</button>
           </form>
       </div>
-      
 
       <div class="form-container sign-in-container">
           <form action="#">
-            <h1>Sign in</h1>
-            <input id="email" type="text" placeholder="Email"></input>
-            <input id="password" type="password" placeholder="Password"></input>
-            <button id="submit">Sign In</button>
-            
-            
+              <h1>Sign in</h1>
+              <input id="email" type="text" placeholder="Email"></input>
+              <div class="input-container">
+                  <input id="password" type="password" placeholder="Password"></input>
+                  <span class="eyeicon" onclick="togglePasswordVisibility('password')">&#x1F441;</span>
+              </div>
+              <button id="submit">Sign In</button>
           </form>
-      </div>          
-   
+      </div>
+
   </div>
 
 </body>
@@ -202,23 +201,23 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
-function togglePasswordVisibility(inputId) {
-  var x = document.getElementById(inputId);
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
+var eyeIcons = document.querySelectorAll('.eyeicon');
+    if (eyeIcons) {
+        eyeIcons.forEach(function (eyeIcon) {
+            eyeIcon.addEventListener('click', function () {
+                var inputId = this.dataset.targetInput;
+                togglePasswordVisibility(inputId);
+            });
+        });
+    }
+    function togglePasswordVisibility(inputId) {
+    var x = document.getElementById(inputId);
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
 }
-function togglePasswordVisibility(inputId) {
-  var x = document.getElementById(inputId);
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-
 </script>
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siq1f6a21517805e703373ecf4589939a06f61ea18f9c1dd4f7d0c6efdb43f88261", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
 
