@@ -185,23 +185,6 @@ createacctbtn.addEventListener('click',(e)=>
   });
 });
 
-let initialLoad = true;
-
-onAuthStateChanged(auth, (user) => {
-  if (initialLoad) {
-    initialLoad = false;
-    return;
-  }
-
-  if (user) {
-    // User is signed in, redirect to logged.html
-    window.location.href = "assets/logged.html";
-  } else {
-    // User is signed out
-    // ...
-  }
-});
-
 logout.addEventListener('click',(e)=>
 {
   auth.signOut().then(() => {
