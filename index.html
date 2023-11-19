@@ -31,16 +31,23 @@
         </div> 
     
 
-      <div class="form-container sign-up-container" id="create-acct">
+        <div class="form-container sign-up-container" id="create-acct">
           <form action="#">
               <h1>Create an Account</h1>
               <input id="emailsignup" type="text" placeholder="Email *"></input>
               <input id="confirmemailsignup" type="email" placeholder="Re-enter Email *"></input>
-              <input id="passwordsignup" type="password" placeholder="Password *"></input>
-              <input id="confirmpasswordsignup" type="password" placeholder="Re-enter Password *"></input>
+              <div class="input-container">
+                  <input id="passwordsignup" type="password" placeholder="Password *"></input>
+                  <span class="eyeicon" onclick="togglePasswordVisibility('passwordsignup')">&#x1F441;</span>
+              </div>
+              <div class="input-container">
+                  <input id="confirmpasswordsignup" type="password" placeholder="Re-enter Password *"></input>
+                  <span class="eyeicon" onclick="togglePasswordVisibility('confirmpasswordsignup')">&#x1F441;</span>
+              </div>
               <button id="createacctbtn">Create Account</button>
           </form>
       </div>
+      
 
       <div class="form-container sign-in-container">
           <form action="#">
@@ -195,6 +202,22 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
+function togglePasswordVisibility(inputId) {
+  var x = document.getElementById(inputId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function togglePasswordVisibility(inputId) {
+  var x = document.getElementById(inputId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 
 </script>
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siq1f6a21517805e703373ecf4589939a06f61ea18f9c1dd4f7d0c6efdb43f88261", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>

@@ -257,3 +257,23 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+.input-container {
+    position: relative;
+	width: 100%;
+}
+
+
+
+.eyeicon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+.eyeicon:hover {
+    color: #333;
+}
