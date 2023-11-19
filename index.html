@@ -85,34 +85,33 @@
   const auth = getAuth();
 
 
-submit.addEventListener('click',(e)=>
-{
+  submit.addEventListener('click', (e) => {
+  e.preventDefault();
+
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
-
   signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    
-    const dt = new Date();
-    update(ref(database, 'user/' + user.uid),{
-      last_login: dt,
-      
-    });
-    
-    alert('Logged In');
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    .then((userCredential) => {
+      const user = userCredential.user;
 
-    alert(errorMessage);
-    // ..
-  });
+      const dt = new Date();
+      update(ref(database, 'user/' + user.uid), {
+        last_login: dt,
+      });
+
+      alert('Logged In');
+      // Redirect to logged.html here if needed
+      window.location.href = "assets/logged.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    });
 });
+
 // Function to clear input fields
 function clearInputFields() {
   document.getElementById("emailsignup").value = "";
@@ -186,21 +185,17 @@ createacctbtn.addEventListener('click',(e)=>
   });
 });
 
-const user = auth.currentUser;
-if (user){
-  // User is signed in
-  // ...
-  window.location.href = "home.php";
-} else {
-  // No user is signed in
-  // ...
-}
+let initialLoad = true;
 
 onAuthStateChanged(auth, (user) => {
-  if (user) {
+  if (initialLoad) {
+    initialLoad = false;
+    return;
+  }
 
+  if (user) {
+    // User is signed in, redirect to logged.html
     window.location.href = "assets/logged.html";
-    // ...
   } else {
     // User is signed out
     // ...
