@@ -71,7 +71,16 @@ body {
   
 } 
 
-@media  (max-width: 600px) {
+
+@media (max-width: 950px)  {
+  .col{
+    
+    margin-left: 13%;
+  }
+}
+
+
+@media (max-width: 820px)  {
   .col{
     
     margin-left: 13%;
