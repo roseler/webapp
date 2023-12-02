@@ -332,3 +332,25 @@ h2.consult-support {
 }
 /* end of ticket */
 
+/* new */
+.hghlght-lttrs{
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 125%;
+}
+.brwn-lttrs{
+  font-family: 'Macondo Swash Caps', cursive;
+  color:#ed994b;
+  font-size: 140%;
+  font-weight: bold;
+}
+.white-lttrs{
+  color: white;
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 125%;
+
+}
+.blck-lttrs{
+  color: #000;
+  font-family: 'Macondo Swash Caps', cursive;
+
+}
