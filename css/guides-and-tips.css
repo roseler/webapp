@@ -72,10 +72,12 @@ body {
 } 
 
 
+
 @media (max-width: 950px)  {
   .col{
     
     margin-left: 13%;
+    margin: 0;
   }
 }
 
@@ -84,7 +86,9 @@ body {
   .col{
     
     margin-left: 13%;
+    margin: 0;
   }
 }
+
 
 
