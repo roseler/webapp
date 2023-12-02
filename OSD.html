@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/supportStyle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/content1Style.css">
+    <link rel="stylesheet" href="./css/navFooter.css">
+    <link rel="stylesheet" href="./css/arrowup.css">
+    <link rel="stylesheet" href="./css/preLoader.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="./scripts/scrollup.js"></script>
+        <script src="./scripts/preLoader.js"></script>
+
+    <title>OSD</title>
+</head>
+
+
+<style>
+    .pdf-container {
+        width: 50%;
+        /* Adjust the width as needed */
+        margin: 0 auto;
+        /* Center the container */
+        background: #000;
+
+    }
+
+    .pdf-embed {
+        width: 100%;
+        /* Make the PDF fill the container width */
+        height: 700px;
+        /* Adjust the height as needed */
+        margin-left: 10px;
+    }
+</style>
+
+
+<body>
+    <div id="preloader"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homePage.html"><img src="image/logo4.png" width="200" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0  ">
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link" href="homePage.html">Home</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link"aria-current="page" href="#">Rules</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link" href="counsel.html">Counsel</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link" href="support.html">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="sample-headerOSD">
+        <div class="sample-header-section">
+
+        </div>
+    </div>
+
+    <h2 class="consult-support">Student Discipline Manual</h2>
+
+    <div class="container-ticket">
+        <div class="pdf-conatiner">
+            <embed class="pdf-embed" src="../support/copies/OSD.pdf" type="application/pdf">
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="btn-go-top">
+            <i class="fa-solid fa-arrow-up" href="#"></i>
+        </div>
+        <div class="footercontainer">
+            <div class="sec aboutUs">
+                <h5>About Us</h5>
+                <p>CS Tavern is an online platform offering Sentiment Analysis services to users, fostering a sense
+                    of
+                    companionship and understanding by assuring them that there is someone who comprehends their
+                    emotions. It delivers guidance, tips, and educational information, empowering users
+                    with valuable insights.</p>
+                <ul class="sci">
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sec quickLinks">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="support.html">FAQ</a></li>
+                    <li><a href="support.html">Help</a></li>
+                    <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="privacyPolicy.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="sec contact">
+                <h5>Contact Us</h5>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i> </span>
+                        <p><a href="">(+63) 956 098 7463</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i> </span>
+                        <p><a href="">cstavern@@gmail.com</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-message"></i> </span>
+                        <p><a href="">Submit a ticket</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyrightText">
+        <p>Copyright 2023 CS Tavern | All rights reserved.</p>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+
+
+</html>

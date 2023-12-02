@@ -1,0 +1,17 @@
+
+/* pre loader */
+#preloader {
+    background: rgb(239, 202, 167) url(../image/loader.gif ) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.5s ease, pointer-events 0.5s; /* Add a transition for opacity and pointer-events */
+    pointer-events: none; /* Enable pointer events by default */
+  }
+  /* end of pre loader */
+  

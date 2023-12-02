@@ -1,0 +1,34 @@
+
+.btn-go-top{
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: #df9147;
+    text-align: center;
+    border-radius: 100px;
+    padding-top: 13px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+  
+  .up-button{
+    display: inline-block;
+    font-family: hustbee!important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    -moz-osx-font-smoothing: grayscale;
+  }

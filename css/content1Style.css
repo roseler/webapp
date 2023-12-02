@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:500");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+}
+
+/* pre loader */
+#preloader {
+    background: rgb(239, 202, 167) url(../image/loader.gif ) no-repeat center center;
+  background-size: 15%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s ease, pointer-events 0.5s; /* Add a transition for opacity and pointer-events */
+  pointer-events: none; /* Enable pointer events by default */
+}
+/* end of pre loader */
+
+
+/* test */
+
+.sample-header {
+  position: static;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1620302044854-9c3387b80ed3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sample-header1 {
+  position: static;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-image: url("https://static.wixstatic.com/media/30e872_5bb6e1cdcbbc4a9da004cc32fc6aab3d~mv2.jpg/v1/fill/w_640,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/30e872_5bb6e1cdcbbc4a9da004cc32fc6aab3d~mv2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sample-header2 {
+    position: static;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: url("https://cdn.pixabay.com/photo/2015/07/22/21/44/book-856151_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .sample-header3 {
+    position: static;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: url("https://davissciencesays.ucdavis.edu/sites/g/files/dgvnsk6006/files/styles/sf_landscape_16x9/public/media/images/social-anxiety-01.jpeg?h=4bce8042&itok=MSaieDZF");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  
+  .sample-headerOSD {
+    position: static;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: url("../image/ceafa.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+.sample-header-section {
+  position: relative;
+  padding: 15% 0 10%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sample-section h1 {
+  font-weight: 500;
+  color: orange;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 400;
+}
+.sample-section-wrap {
+  position: relative;
+  background-color: white;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sample-section {
+  position: relative;
+  padding: 40px;
+}
+
+/* test */
+
+h1 {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: "Gambetta", serif;
+  transition: 900ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  outline: none;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+h1:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 5px;
+}
+
+.sample-section p {
+  padding-top: 20px;
+  font-size: 1.2em;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+  text-indent: 50px;
+}
+
+.sample-section h3 {
+  font-size: 1.8em;
+  padding-top: 50px;
+  letter-spacing: 0.5px;
+}
+
+.sample-section ul {
+  font-size: 1.2em;
+  line-height: 250%;
+  letter-spacing: 0.5px;
+}
+
+.sample-section .li-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sample-section span {
+  padding-top: 20px;
+  font-size: 1.2em;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sample-section .container-infos p {
+    font-size: 15px;
+    padding: 0;
+    text-indent: 0%;
+    letter-spacing: normal;
+    line-height: normal;
+  }
