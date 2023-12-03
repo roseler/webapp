@@ -3,6 +3,7 @@
 
 <head>
   <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="./image/headerlogo1.ico">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +61,30 @@
       </div>
 
   </div>
+
+  <script>
+    var eyeIcons = document.querySelectorAll('.eyeicon');
+    if (eyeIcons) {
+      eyeIcons.forEach(function (eyeIcon) {
+        eyeIcon.addEventListener('click', function () {
+          var inputId = this.dataset.targetInput;
+          togglePasswordVisibility(inputId);
+        });
+      });
+    }
+
+    function togglePasswordVisibility(inputId) {
+      var x = document.getElementById(inputId);
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
 </body>
+
 
 <script type="module" src="assets/js/main.js"></script>
 <script type="module">
@@ -105,7 +129,7 @@
         last_login: dt,
       });
 
-      alert('Logged In');
+      
       // Redirect to logged.html here if needed
       window.location.href = "homePage.html";
     })
@@ -162,14 +186,7 @@ createacctbtn.addEventListener('click',(e)=>
         console.error('Error sending verification email:', error);
       });
 
-    // add user to database
-    set(ref(database, 'users/' + user.uid), {
-      email: emailsignup,
-      password: passwordsignup
-    });
-
-    alert('Signed up');
-    // ...
+   
 
     // add user to database
 
@@ -200,23 +217,6 @@ logout.addEventListener('click',(e)=>
     alert(error);
   });
 });
-var eyeIcons = document.querySelectorAll('.eyeicon');
-    if (eyeIcons) {
-        eyeIcons.forEach(function (eyeIcon) {
-            eyeIcon.addEventListener('click', function () {
-                var inputId = this.dataset.targetInput;
-                togglePasswordVisibility(inputId);
-            });
-        });
-    }
-    function togglePasswordVisibility(inputId) {
-    var x = document.getElementById(inputId);
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
-}
 </script>
 
 
