@@ -20,7 +20,6 @@ body {
 /* content */
 
 .box-container{
-    
     margin-bottom: 55px;
 }
 
@@ -53,7 +52,7 @@ body {
     color: #e2a165;
     border: #e2a165 1px solid;
     margin-top: 20px;
-    margin-left: 75px;
+    margin-left: 30%;
     margin-bottom: 5px;
 }
 
@@ -69,26 +68,130 @@ body {
 .content-text{
     margin-bottom: 15px;
   
-} 
-
-
-
-@media (max-width: 950px)  {
-  .col{
-    
-    margin-left: 13%;
-    margin: 0;
-  }
-}
-
-
-@media (max-width: 820px)  {
-  .col{
-    
-    margin-left: 13%;
-    margin: 0;
-  }
 }
 
 
 
+@media (max-width: 576px) {
+
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .box-container h1 {
+        font-size: 30px;
+    }
+  
+    .title.card-title {
+        font-size: 16px; 
+    }
+  
+    .card-text {
+        font-size: 12px; 
+    }
+  
+    .button.btn {
+        font-size: 12px; 
+    }
+  }
+
+  @media (max-width: 750px) {
+
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+  
+    .box-container h1 {
+        font-size: 40px; 
+    }
+  
+    .title.card-title {
+        font-size: 18px; 
+    }
+  
+    .card-text {
+        font-size: 14px; 
+    }
+  
+    .button.btn {
+        font-size: 14px; 
+    }
+  }
+  
+
+@media (max-width: 920px) {
+
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+   
+  }
+
+  .box-container h1 {
+      font-size: 40px; 
+  }
+
+  .title.card-title {
+      font-size: 18px; 
+  }
+
+  .card-text {
+      font-size: 14px; 
+  }
+
+  .button.btn {
+      font-size: 14px; 
+  }
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+ 
+    }
+
+    .box-container h1 {
+        font-size: 40px; 
+    }
+  
+    .title.card-title {
+        font-size: 16px; 
+    }
+  
+    .card-text {
+        font-size: 12px; 
+    }
+  
+    .button.btn {
+        font-size: 14px;
+    }
+  }
+  
+  
+  
+  
+  @media (min-width: 951px) and (max-width: 1280px) {
+    .col{
+        display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .row {
+        justify-content: center;
+    }
+
+    .col-md-6 {
+        flex: 0 0 calc(50% - 15px); 
+        
+    }
+}
