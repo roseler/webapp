@@ -39,8 +39,8 @@ body {
 }
 
 .text-container {
-  margin-left:15%;
-
+  margin-left:10%;
+  
 }
 
 
@@ -60,7 +60,23 @@ body {
 .left-text .cursive-header {
   font-family: 'Macondo Swash Caps', cursive;
   margin-bottom: 5%;
+  font-size: 5.6rem;
 }
+
+
+
+
+@media (max-width: 576px) {
+
+  .left-text .cursive-header {
+    font-family: 'Macondo Swash Caps', cursive;
+    margin-bottom: 5%;
+    font-size: 3.6rem;
+  }
+  
+}
+
+
 #cs{
   color: #E2A165;
   font-family: 'Macondo Swash Caps', cursive;
@@ -79,7 +95,7 @@ body {
 }
 
 .lead {
-  line-height: 1.8em;
+  line-height: 2.2em;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -104,19 +120,20 @@ body {
   position: inherit;
   margin-top: 50px;
   max-width: 100%;
-
+  
 }
 
 .img-box .enlarge-image {
-  width: 100%; /* Set to 100% for normal size */
+  width: 100%; 
   height: auto;
+ 
 }
 
-/* Media query to adjust image size for smaller screens */
+
 @media (max-width: 768px) {
   .img-box .enlarge-image {
-    width: 80%; /* Adjust the width as needed for smaller screens */
-    max-width: 300px; /* Set a maximum width to prevent excessive scaling on small screens */
+    width: 80%; 
+    max-width: 300px; 
   }
 }
 
