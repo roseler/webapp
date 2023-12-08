@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:500");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -97,6 +96,18 @@ body {
   }
 }
 
+
+.smaller {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-align: start;
+
+  &.smaller {
+    font-size: 16px;
+  }
+}
+
 .go-corner {
   display: flex;
   align-items: center;
@@ -160,7 +171,7 @@ h2.consult-support {
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin: 30px auto; /* Adjust the top and bottom margin as needed */
+  margin: 30px auto; 
   border: 2px solid #ff9939;
   margin-bottom: 100px;
 }
