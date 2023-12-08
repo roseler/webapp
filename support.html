@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Messages | Firebase</title>
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="./image/headerlogo1.ico">
     <link rel="stylesheet" href="./css/supportStyle.css">
     <link rel="stylesheet" href="./css/preLoader.css">
     <link rel="stylesheet" href="./css/navFooter.css">
-    <link rel="stylesheet" href="./css/arrowup.css">    
+    <link rel="stylesheet" href="./css/arrowup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,7 +27,7 @@
     <div id="preloader"></div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="homePage.html"><img src="image/logo4.png" width="200" height="50"></a>
+            <a class="navbar-brand" href="homePage.html"><img src="image/logo4.png" width="200" height="50" ></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -41,20 +42,20 @@
                         <a class="nav-link" href="OSD.html">Rules</a>
                     </li>
                     <li class="nav-item ms-auto">
-                        <a class="nav-link" href="counsel.html">Counsel</a>
+                        <a class="nav-link"  href="counsel.html">Counsel</a>
                     </li>
                     <li class="nav-item ms-auto">
-                        <a class="nav-link" aria-current="page" href="#">Contact</a>
+                        <a class="nav-link" aria-current="page" href="support.html">Contact</a>
                     </li>
                     <li class="nav-item ms-auto">
-                        <a class="nav-link" aria-current="page" href="index.html">Logout</a>
+                        <a class="nav-link" href="login.html">Logout</a>
                     </li>
-                    
                 </ul>
 
             </div>
         </div>
     </nav>
+
 
 
     
@@ -73,7 +74,6 @@
 
     <h2 class="consult-support"><span class="brwn-lttrs">F</span>requently <span class="brwn-lttrs">A</span>sked <span
             class="brwn-lttrs">Q</span>uestions</h2>
-
 
 
     <div class="container-card">
@@ -99,10 +99,21 @@
                     <div class="card-container">
                         <a class="card3">
                             <h3 class="card-title" style="color: orange;">How to use CS Tavern</h3>
-                            <p class="small">DamaKita analyze sentiment of the user by simply chatting, a ChatBot ,
-                                named "DaKi", will reach out to you.
-                                You also can request to chat with someone. You can also reach us by
-                                submitting a ticket if you have other concerns.</p>
+                            <p class="small">CS Tavern is your go-to app for a confident university experience:
+                            </p><ol class="smaller">
+                                <li>
+                                    Chatbot for Sentiments and Advice
+                                </li>
+                                <li>
+                                    Private Messaging for Concerns
+                                </li>
+                                <li>
+                                    University Rules and Support
+                                </li>
+                                <li>
+                                    Abuse Support
+                                </li>
+                            </ol>
                             <div class="dimmer"></div>
                             <div class="go-corner"></div>
                         </a>
@@ -112,11 +123,10 @@
                     <div class="card-container">
                         <a class="card3">
                             <h3 class="card-title" style="color: orange;">What is the purpose of CS Tavern</h3>
-                            <p class="small">CS Tavern is a Web Page that provides Sentiment Analysis to the user,
-                                making them feel that
-                                they are not alone, and that there is someone out there that can understand their
-                                feelings. It is also
-                                done by providing Guide and Tips,</p>
+                            <p class="small">CS Tavern is your sanctuary for students who've faced abuse. Our mission is
+                                clear: provide comfort, support, and resources to help you navigate through challenging
+                                times. Whether it's harassment or discrimination, we're here to empower you with
+                                guidance and a caring community.</p>
                             <div class="dimmer"></div>
                             <div class="go-corner"></div>
                         </a>
@@ -127,7 +137,9 @@
     </div>
 
 
+   
     <h2 class="consult-support"><span class="brwn-lttrs">C</span>onsult / <span class="brwn-lttrs">S</span>upport</h2>
+
 
     <div class="container-ticket">
 
@@ -154,6 +166,7 @@
                 <div class="topic-text">Submit a Ticket</div>
                 <p>You can reach us by filling out this form below</p>
                 <form action="" id="contactForm">
+                    <div class="alert">Your message sent</div>
 
                     <div class="input-box">
                         <input type="text" id="name" placeholder="Your name...." />
@@ -168,7 +181,7 @@
                     </div>
 
                     <div class="button">
-                        <input type="submit" value="Send Now" onclick="alert('Your message has been sent!')" />
+                        <input type="submit" value="Send Now">
                     </div>
                 </form>
             </div>
@@ -221,11 +234,11 @@
                     </li>
                     <li>
                         <span><i class="fa-solid fa-envelope"></i> </span>
-                        <p><a href="">cstavern@gmail.com</a></p>
+                        <p><a href="">cstavern@@gmail.com</a></p>
                     </li>
                     <li>
                         <span><i class="fa-solid fa-message"></i> </span>
-                        <p><a href="support.html">Submit a ticket</a></p>
+                        <p><a href="">Submit a ticket</a></p>
                     </li>
                 </ul>
             </div>
@@ -235,7 +248,6 @@
     <div class="copyrightText">
         <p>Copyright 2023 CS Tavern | All rights reserved.</p>
     </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -304,7 +316,7 @@
     const getElementVal = (id) => {
         return document.getElementById(id).value;
     };
-   
+
 </script>
 
 </html>
